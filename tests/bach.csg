@@ -1,0 +1,28 @@
+# The Bach language:
+# L(x) = { x such that x = (a^n | b^n | c^n) } where | represents any
+# interleaving of it's operands
+#
+# examples:
+# abc, cab, bcbaac, etc.
+
+V = X0 X1 X2 A B C Y0 A' B' C'
+
+T = a b c
+
+R =
+S --> X0
+X0 --> A X1
+X1 --> X2 C
+X2 --> X0 B
+X2 --> B
+C B --> B C
+B C --> C B
+C A --> A C
+A C --> C A
+A B --> B A
+B A --> A B
+
+A --> a
+B --> b
+C --> c
+

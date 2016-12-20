@@ -1,0 +1,35 @@
+# A set of variables, terminals, and rules define a grammar
+# (A start symbol is already defined as S for all grammars)
+# Lines starting with the pound symbol will be ignored.
+
+# The line beginning with "V = " denotes the set of variables
+# Variables are space delineated
+# Yes you can use words as variables
+# S cannot be used as a variable as it is already defined
+V = A A' B B' C
+
+# The line beginning with "T = " denotes the set of terminals
+# Terminals are space delineated
+# Yes you can use words as terminals
+# But please :( why would you...
+# S cannot be used as a terminal
+T = a b c
+
+# The line beginning with "R = " denotes the beginning of the rules
+# The rules should be the final section of the CSG file
+# Rules are newline delineated
+# Per KNF, rules must match one of the following formats:
+# * AB --> CD
+# * A --> AB
+# * A --> a
+# (for some variables A, B, C, and D, and some terminal a)
+R =
+S --> A'
+A' --> A B'
+B' --> B C
+A --> a
+B --> b
+C --> c
+
+# This grammar matches the language x='abc'
+
